@@ -1,17 +1,16 @@
 <?php
     namespace Archp\services;
-    
+    declare(strict_type = 1);
     // gera senha aleatória
     class PasswordGenerator{
         private int $lengthOfPwd;
         private int $levelOfSecurity;
-        private array $excludeTerms;
+        private array $excludeTerms = [];
         private string $pwd = "";
         public function __construct(int $lop, int $los){
             $this->lengthOfPwd = $lop; // número de caracteres da senha
             $this->levelOfSecurity = ($los++)*2; // nível de segurança da senha
         }
-
         // função geradora
         public function gen(int $count):void{ 
             for($count; $count<$this->lengthOfPwd; $count++){
@@ -20,18 +19,15 @@
             $pwd = $this->sanitize_pwd(implode("", $pwd));
             $this->pwd .= $pwd;
             $length = strlen($this->pwd);
-
             // garante que a senha tem o comprimento correto
             if($length < $this->lengthOfPwd){ 
                $this->gen($length);
             }
         }
-
         // retorna senha
         public function get():string{
             return $this->pwd;
         }
-
         // retorna caracter ASCII
         private function get_char(int $randomInt):string{ 
             switch($randomInt){
@@ -50,7 +46,6 @@
                     return chr(60+rand(0,4)); // símbolos
             }
         }
-
         // retira termos indesejáveis
         private function sanitize_pwd(string $pwd):string{ 
             foreach($this->excludeTerms as $exclude){
@@ -58,7 +53,6 @@
             }
             return $pwd;
         }
-
         // obtém termos indesejáveis
         public function set_exclude(array $excludes):int{ 
             foreach($excludes as $str){
