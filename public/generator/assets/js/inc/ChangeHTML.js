@@ -9,11 +9,15 @@ export function printForm(){
     document.getElementById("paragraph").innerHTML = "";
 }
 export function printErrorForm(id, message){
-    console.log('error_in_'+id);
-    document.getElementById('error_in_'+id).innerHTML = message;
+    let error = document.getElementById('error_in_'+id)
+    error.innerHTML = message;
+    error.style.width = "auto";
 }
 export function resetErrors(){
-    errors = document.getElementsByClassName('error');
-    errors.innerHTML = "";
-    erros.style.display = "none";
+    let error = document.getElementsByClassName('error');
+    console.log("error =>"+error);
+    Object.values(error).forEach((span) => {
+        span.innerHTML= " ";
+        span.style.width = "0px";
+    });    
 }

@@ -37,6 +37,9 @@ label{
     margin-bottom: 15px;
 }
 .error{
+    width: 0;
+    min-height: 12px;
+    margin-top: 10px;
     font-size: 12px;
     color: #F7093C;
 }

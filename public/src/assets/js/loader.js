@@ -1,6 +1,6 @@
 function whileLoading(){
-    document.getElementsByTagName('body').style.display = "none";
+    document.getElementsByTagName('body')[0].style.display = "none";
 }
 function afterLoaded(){
-    document.getElementsByTagName('body').style.display = "flex";
+    document.getElementsByTagName('body')[0].style.display = "flex";
 }

@@ -19,7 +19,6 @@ export function nameValidator(key){
 export function lengthValidator(key){
     idOfCall = key;
     let number = parseInt(input[key]);
-    console.log(input[key]);
     if(number < minLength){
         throw new Error("Vamos melhorar isso? Sua senha deve ter, ao menos, "+minLength+" caracteres");
     }

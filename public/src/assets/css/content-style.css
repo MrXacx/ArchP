@@ -6,9 +6,16 @@ ul{
     flex-direction: row;
     justify-content: space-between;
 }
+ul ul{
+    margin-left: 0;
+}
 ul>li{
     width: auto;
     margin-right: 25px;
+}
+li>ul{
+    align-items: center;
+    justify-content: space-between;
 }
 /* img */
 img{
@@ -23,6 +30,7 @@ main{
 main>img{
     justify-self: left;
     align-self: flex-start;
+    margin: 60px 0 0 60px;
 }
 
 /* aside */

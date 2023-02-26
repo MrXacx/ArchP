@@ -25,14 +25,15 @@
         <nav>
             <ul>
                 <li>
-                    <a href="./index.html">GERADOR</a>
+                    <a href="../home/">HOME</a>
+                </li> 
+                <li>
+                    <a href="./">GERADOR</a>
                 </li>
                 <li>
-                    <a href="../faq/index.html">COMO FUNCIONA</a>
+                    <a href="../faq/">COMO FUNCIONA</a>
                 </li>
-                <li>
-                    <a href="../contact/index.html">CONTATOS</a>
-                </li>     
+                    
             </ul>
         </nav>
         <main>
@@ -41,14 +42,14 @@
                 <section>
                     <h1>Gere uma nova senha</h1>
                     <form id="form" action="./assets/js/Core.js" method="POST">
-                        <label for="name">Digite o seu nome: <span id="error_in_name"  class="error"></span></label>
-                        <input id="name" name="name" type="text"/>
-                        <label for="number">Defina o número de caracteres:<span id="error_in_number"  class="error"></span></label>
-                        <input id="number" name="number" type="number"/>
-                        <label for="level">Defina o nível de segurança: <span id="error_in_level" class="error"></span></label>
+                        <label for="name">Digite o seu nome: <span id="error_in_name"  class="error"> </span></label>
+                        <input id="name" name="name" type="text" placeholder="Ex: Eldmar"/>
+                        <label for="number">Defina o número de caracteres:<span id="error_in_number"  class="error"> </span></label>
+                        <input id="number" name="number" type="number" placeholder="Ex: 17"/>
+                        <label for="level">Defina o nível de segurança: <span id="error_in_level" class="error"> </span></label>
                         <ul id="level">
                             <li>
-                                <input name="level" type="radio" value="2" id="Soft"/>
+                                <input name="level" type="radio" value="2" id="Soft" checked/>
                                 <label for="Soft">Baixo</label>
                             </li>
                             <li>
@@ -72,7 +73,11 @@
         <footer>
             <ul>
                 <li>
-                    <a href="https://github.com/MrXacx/ArchP">Desenvolvimento</a>
+                    <ul>
+                        <li><a href="https://linkedin.com/in/arielos">Contate-me</a></li>
+                        <li><a href="https://github.com/MrXacx/ArchP">Desenvolva</a></li>
+                    </ul>
+                    
                 </li>
                 <li>
                     <p>Idealizado por Ariel Santos</p>
