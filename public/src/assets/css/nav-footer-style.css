@@ -1,0 +1,46 @@
+/* pattern */
+nav, footer{
+    width: 100%;
+    height: 104px;
+    display: flex;
+    align-items: center;
+    background-color: #0F0F0F;
+    font-weight: 300;
+}
+
+/* nav */
+nav{
+    opacity: 50%;
+}
+nav>ul{
+    max-width: 720px;
+}
+nav li:hover, footer li li:hover{
+    transition: 10ms;
+    padding-left: 12px;
+    margin-right: 13px;
+    border-bottom: 1px solid #FFFFFF;
+}
+nav a{
+    font-size: 20px;
+}
+
+/* footer */
+footer, footer>ul{
+    display: flex;
+    justify-content: space-between;
+}
+footer{
+    opacity: 60%;
+    justify-self: flex-end;
+}
+footer>ul{
+    width: 100%;
+}
+footer a{
+    font-size: 15px;
+}
+footer p{
+    margin-right: 96px;
+    text-align: right;
+}

@@ -1,0 +1,28 @@
+/* texts */
+h1{
+    margin: 30px 0;
+    text-align: center;
+    font-weight: 700;
+}
+p, label{
+    font-size: 15px;
+    font-weight: 500;
+}
+p{
+    max-width: 80%;
+    text-align: justify;
+    margin-bottom: 25px;
+}
+a{
+    text-align: left;
+    color:#F9F9F9;
+    fill-opacity: 100%;
+}
+a:visited{
+    display: none;
+}
+a:hover{
+    transition: 500ms;
+    text-align: right;
+    color: #FFFFFF;
+}

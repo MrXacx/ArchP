@@ -1,0 +1,29 @@
+/* patterns */
+*{
+    margin:0;
+    padding: 0;
+    text-decoration: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #F9F9F9;
+    list-style-type: none;
+    border: none;
+}
+body{
+    width: 1920px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #0e0e0e;
+    background-size:cover;
+}
+.in_left{
+    justify-self: left;
+}
+.in_right{
+    justify-self: right;
+}
+.in_center{
+    justify-self: center;
+}
