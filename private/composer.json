@@ -1,0 +1,21 @@
+{
+    "name": "archp/private",
+    "description": "An application that generates passwords",
+    "type": "project",
+    "license": "GLP",
+    "autoload": {
+        "psr-4": {
+            "Archp\\": "src/",
+            "services\\": "src/services/"
+        }
+    },
+    "authors": [
+        {
+            "name": "MrXacx",
+            "email": "misterxacx@gmail.com"
+        }
+    ],
+    "require": {
+        "PHP": "^7.4"
+    }
+}
