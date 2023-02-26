@@ -1,29 +1,39 @@
 <?php
     namespace Archp\services;
+    
+    // gera senha aleatória
     class PasswordGenerator{
         private int $lengthOfPwd;
         private int $levelOfSecurity;
         private array $excludeTerms;
         private string $pwd = "";
         public function __construct(int $lop, int $los){
-            $this->lengthOfPwd = $lop;
-            $this->levelOfSecurity = ($los++)*2;
+            $this->lengthOfPwd = $lop; // número de caracteres da senha
+            $this->levelOfSecurity = ($los++)*2; // nível de segurança da senha
         }
-        public function gen(int $count):void{
+
+        // função geradora
+        public function gen(int $count):void{ 
             for($count; $count<$this->lengthOfPwd; $count++){
                 $pwd[] = $this->get_char(rand(1,$this->levelOfSecurity));
             }
             $pwd = $this->sanitize_pwd(implode("", $pwd));
             $this->pwd .= $pwd;
             $length = strlen($this->pwd);
-            if($length < $this->lengthOfPwd){
+
+            // garante que a senha tem o comprimento correto
+            if($length < $this->lengthOfPwd){ 
                $this->gen($length);
             }
         }
+
+        // retorna senha
         public function get():string{
             return $this->pwd;
         }
-        private function get_char(int $randomInt):string{
+
+        // retorna caracter ASCII
+        private function get_char(int $randomInt):string{ 
             switch($randomInt){
                 case 1:
                 case 2:
@@ -40,19 +50,23 @@
                     return chr(60+rand(0,4)); // símbolos
             }
         }
-        public function set_exclude(array $excludes):int{
+
+        // retira termos indesejáveis
+        private function sanitize_pwd(string $pwd):string{ 
+            foreach($this->excludeTerms as $exclude){
+                $pwd = str_ireplace($exclude, "",$pwd);
+            }
+            return $pwd;
+        }
+
+        // obtém termos indesejáveis
+        public function set_exclude(array $excludes):int{ 
             foreach($excludes as $str){
                 $this->excludeTerms[] = $str;
                 $this->excludeTerms[] = strrev($str);
             }
             $this->excludeTerms = array_unique($this->excludeTerms, SORT_STRING);
             return count($this->excludeTerms);
-        }
-        private function sanitize_pwd(string $pwd):string{
-            foreach($this->excludeTerms as $exclude){
-                $pwd = str_ireplace($exclude, "",$pwd);
-            }
-            return $pwd;
         }
     }
 ?>
